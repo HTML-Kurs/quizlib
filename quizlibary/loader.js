@@ -9,7 +9,11 @@ async function loadDoc(name) {
 
 
 function loadQuestionsFromText(text) {
-    const questions = text.replace("\r", "").split('\r\n\r\n');
+    var questions = text.replace("\r", "").split('\r\n\r\n');
+
+    if (questions.length == 1) {
+        questions = questions[0].split('\n\n');
+    }
 
     console.log(text);
 
